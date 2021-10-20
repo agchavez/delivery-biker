@@ -10,8 +10,10 @@
   font-weight: 300;
   font-size: 24px;
   line-height: 28px;
+  margin-top: 40px;
 
 }
+
 
 .container-info {
   margin: 0;
@@ -28,8 +30,11 @@
 .img{
   width: 400px;
 }
+.btn-register{
+  margin-left: 20px1920;
+}
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 1024px) {
   .container-info {
     position: unset;
     margin-top: 40px;
@@ -41,6 +46,9 @@
     margin-top: 40px;
     text-align: center;
 
+  }
+  .btn-register{
+    margin-left: 0px;
   }
   .img{
     width: 250px;
