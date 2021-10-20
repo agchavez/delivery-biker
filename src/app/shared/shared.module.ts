@@ -6,6 +6,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -20,6 +21,7 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
   imports: [
     CommonModule,
     SharedRoutingModule,
+    FontAwesomeModule
   ],
   exports:[
       FooterComponent,
