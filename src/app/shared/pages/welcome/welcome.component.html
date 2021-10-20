@@ -1,2 +1,25 @@
 <app-nav-bar></app-nav-bar>
-<h2>Welcome</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-lg-6">
+      <div class="container-img">
+        <img src="../../../../assets/img/welcome-img.png" class="img"  alt="">
+      </div>
+    </div>
+    <div class="col-sm-12 col-lg-6">
+      <div class="container-info">
+        <div class="title mb-3">
+          <p>Bienvenido</p>
+        </div>
+        <div class="container-subtitle ">
+          <p>Unte a nosotros para formar parte de Pidelow y disfrutar de nuestros beneficios </p>
+        </div>
+        <div class="mt-5">
+          <button type="button" mat-raised-button class="btn-outline-light btn-basic-trans mt-3" [routerLink]="['/auth/login']">Iniciar sesión</button>
+          <button type="button" mat-raised-button class="btn-outline-light btn-basic-solid mt-3" [routerLink]="['/auth/register']">Registrarse</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
