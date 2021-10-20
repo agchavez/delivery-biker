@@ -2,16 +2,29 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SharedRoutingModule } from './shared-routing.module';
-import { Error404Component } from './error404/error404.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { ErrorComponent } from './pages/error/error.component';
+import { WelcomeComponent } from './pages/welcome/welcome.component';
+
+
 
 
 @NgModule({
   declarations: [
-    Error404Component
+    FooterComponent,
+    NavBarComponent,
+    ErrorComponent,
+    WelcomeComponent
   ],
   imports: [
     CommonModule,
-    SharedRoutingModule
+    SharedRoutingModule,
+  ],
+  exports:[
+      FooterComponent,
+      NavBarComponent
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+}

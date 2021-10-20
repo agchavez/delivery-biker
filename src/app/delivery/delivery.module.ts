@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DeliveryRoutingModule } from './delivery-routing.module';
-import { MainComponent } from './main/main.component';
-import { HomeComponent } from './home/home.component';
+import { MainComponent } from './pages/main/main.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 @NgModule({
