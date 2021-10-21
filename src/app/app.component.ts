@@ -8,4 +8,8 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 export class AppComponent {
   title = 'delivery-biker';
   faCoffee = faCoffee;
+
+  onActivate(event:any){
+      window.scroll(0,0)
+  }
 }

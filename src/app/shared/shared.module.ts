@@ -12,6 +12,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { MaterialModule } from '../material/material.module';
 
 
 
@@ -26,7 +27,9 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
   imports: [
     CommonModule,
     SharedRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MaterialModule
+
   ],
   exports:[
       FooterComponent,
