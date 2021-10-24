@@ -1,1 +1,68 @@
-<p>info works!</p>
+<h1 class="tittle">Adjunta la siguiente documentación:</h1>
+<div class="text">
+    A continuación se le solicitan documentos necesarios para la aprobación de su cuenta, se espera que las imágenes sean de alta calidad.
+</div>
+
+<br>
+<mat-accordion class="example-headers-align">
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <b> Licencia </b>
+            </mat-panel-title>
+            <mat-panel-description>
+                Adjunta una foto de tu licencia de conducir
+                <mat-icon>credit_card</mat-icon>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <form class="was-validated">
+            <div class="custom-file">
+                <input type="file" (change)="readUrlLicencia($event)" class="custom-file-input" id="validatedCustomFile" required>
+                <label class="custom-file-label" for="validatedCustomFile">Cambiar archivo...</label>
+                <img [src]="urlLicencia">
+
+                <div class="invalid-feedback">Seleccione una imagen</div>
+            </div>
+        </form>
+
+        <mat-action-row>
+            <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <b>Vehículo</b>
+            </mat-panel-title>
+            <mat-panel-description>
+                Adjunta una foto de tu vehículo de conducir
+                <mat-icon>motorcycle</mat-icon>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <form class="was-validated">
+            <div class="custom-file">
+                <input type="file" (change)="readUrlVehiculo($event)" class="custom-file-input" id="validatedCustomFile" required>
+                <label class="custom-file-label" for="validatedCustomFile">Cambiar archivo...</label>
+                <img [src]="urlVehiculo">
+
+                <div class="invalid-feedback">Seleccione una imagen</div>
+            </div>
+        </form>
+
+        <mat-action-row>
+            <button mat-button color="warn" (click)="prevStep()">Anterior</button>
+            <button mat-button color="primary" (click)="nextStep()">Finalizar</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+
+
+</mat-accordion>
+
+<br>
+
+<div style="text-align: end;">
+    <button class="continuar">Continuar</button>
+
+</div>

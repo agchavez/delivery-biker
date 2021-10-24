@@ -1,0 +1,37 @@
+p {
+    font-family: Lato;
+}
+
+.tittle {
+    color: #DB6D0B;
+    text-align: center;
+    font-weight: bold;
+}
+
+.text {
+    text-align: center;
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+    flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.example-headers-align .mat-form-field+.mat-form-field {
+    margin-left: 8px;
+}
+
+.continuar {
+    color: #DB6D0B;
+    background-color: transparent;
+    border: 1px solid #DB6D0B;
+    padding: 1rem 3rem;
+    margin-left: auto;
+    border-radius: 1rem;
+    font-size: large;
+}
