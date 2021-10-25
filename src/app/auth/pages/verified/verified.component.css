@@ -1,0 +1,35 @@
+.textN {
+    color: #DB6D0B;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 450px) {
+    img {
+        width: inherit;
+    }
+    .verificar-div {
+        text-align: center!important;
+    }
+    .div-text div {
+        margin-right: 0!important;
+    }
+    .verificar {
+        margin-right: 0;
+    }
+}
+
+.verificar {
+    color: #DB6D0B;
+    background-color: transparent;
+    border: 1px solid #DB6D0B;
+    padding: 1rem 3rem;
+    margin-left: auto;
+    border-radius: 1rem;
+    font-size: large;
+    margin-right: 5%;
+}
+
+.div-text {
+    margin-top: auto;
+    margin-bottom: auto;
+}
