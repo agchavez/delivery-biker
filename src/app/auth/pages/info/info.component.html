@@ -10,7 +10,7 @@
             <mat-panel-title>
                 <b> Licencia </b>
             </mat-panel-title>
-            <mat-panel-description>
+            <mat-panel-description class="desc">
                 Adjunta una foto de tu licencia de conducir
                 <mat-icon>credit_card</mat-icon>
             </mat-panel-description>
@@ -29,13 +29,13 @@
             <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
         </mat-action-row>
     </mat-expansion-panel>
-
+    <br>
     <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
         <mat-expansion-panel-header>
             <mat-panel-title>
                 <b>Vehículo</b>
             </mat-panel-title>
-            <mat-panel-description>
+            <mat-panel-description class="desc">
                 Adjunta una foto de tu vehículo de conducir
                 <mat-icon>motorcycle</mat-icon>
             </mat-panel-description>
@@ -60,9 +60,10 @@
 
 </mat-accordion>
 
+
 <br>
 
 <div style="text-align: end;">
-    <button class="continuar">Continuar</button>
+    <button class="continuar" [routerLink]="['/auth/verified']">Continuar</button>
 
 </div>

@@ -2,6 +2,10 @@ p {
     font-family: Lato;
 }
 
+.desc {
+    text-align: -webkit-center;
+}
+
 .tittle {
     color: #DB6D0B;
     text-align: center;
