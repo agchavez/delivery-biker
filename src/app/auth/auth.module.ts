@@ -16,6 +16,8 @@ import { VerifiedComponent } from './pages/verified/verified.component';
 import { InfoComponent } from './pages/info/info.component';
 import { SharedModule } from '../shared/shared.module';
 import { MaterialModule } from '../material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -33,6 +35,7 @@ import { MaterialModule } from '../material/material.module';
     FontAwesomeModule,
     MaterialModule,
     SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class AuthModule {

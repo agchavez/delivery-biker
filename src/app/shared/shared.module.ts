@@ -13,6 +13,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { MaterialModule } from '../material/material.module';
+import { AlertComponent } from './components/alert/alert.component';
 
 
 
@@ -22,7 +23,8 @@ import { MaterialModule } from '../material/material.module';
     FooterComponent,
     NavBarComponent,
     ErrorComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    AlertComponent
   ],
   imports: [
     CommonModule,

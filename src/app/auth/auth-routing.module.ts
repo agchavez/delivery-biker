@@ -6,6 +6,7 @@ import { VerifiedComponent } from './pages/verified/verified.component';
 import { InfoComponent } from './pages/info/info.component';
 import { MainComponent } from './pages/main/main.component';
 
+
 const routes: Routes = [
   {
     path:'',
@@ -15,7 +16,6 @@ const routes: Routes = [
       {path:'register', component:RegisterComponent},
       {path:'verified', component:VerifiedComponent},
       {path:'info', component:InfoComponent},
-      {path:'**', redirectTo:'login'}
     ]
   }
 ];
