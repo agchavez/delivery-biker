@@ -14,6 +14,8 @@ import { ErrorComponent } from './pages/error/error.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { MaterialModule } from '../material/material.module';
 import { AlertComponent } from './components/alert/alert.component';
+import { MapComponent } from './components/map/map.component';
+// import { AgmCoreModule } from '@agm/core';
 
 
 
@@ -24,18 +26,26 @@ import { AlertComponent } from './components/alert/alert.component';
     NavBarComponent,
     ErrorComponent,
     WelcomeComponent,
-    AlertComponent
+    AlertComponent,
+    MapComponent
   ],
+
   imports: [
     CommonModule,
     SharedRoutingModule,
     FontAwesomeModule,
-    MaterialModule
+     MaterialModule,
+  //   AgmCoreModule.forRoot({
+  //     apiKey: 'AIzaSyDppqjwNUIPk0Gqi1vICAtUNHwBAPXWr3M'    
+  //  })
 
   ],
   exports:[
       FooterComponent,
-      NavBarComponent
+      NavBarComponent,
+      
+      MapComponent
+      
   ]
 })
 export class SharedModule {

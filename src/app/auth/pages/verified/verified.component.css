@@ -29,6 +29,11 @@
     margin-right: 5%;
 }
 
+.verificar:hover {
+    background-color: #DB6D0B;
+    color: white;
+}
+
 .div-text {
     margin-top: auto;
     margin-bottom: auto;
