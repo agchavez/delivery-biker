@@ -3,3 +3,9 @@
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
+@media(max-width:480px) {
+    .map {
+        height: 450px;
+    }
+}

@@ -1,6 +1,12 @@
 .textN {
     color: #DB6D0B;
     font-weight: bold;
+    text-align: initial;
+}
+
+h2 {
+    padding: 0!important;
+    text-align: initial;
 }
 
 @media only screen and (max-width: 450px) {
@@ -15,6 +21,8 @@
     }
     .verificar {
         margin-right: 0;
+        padding-left: 15vh;
+        padding-right: 15vh;
     }
 }
 
@@ -23,8 +31,8 @@
     background-color: transparent;
     border: 1px solid #DB6D0B;
     padding: 1rem 3rem;
-    margin-left: auto;
-    border-radius: 1rem;
+    margin-left: 15px;
+    border-radius: 4px;
     font-size: large;
     margin-right: 5%;
 }

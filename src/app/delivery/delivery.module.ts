@@ -11,6 +11,7 @@ import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
 import { FontAwesomeModule,FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
+import { PorfileComponent } from './pages/porfile/porfile.component';
 
 
 
@@ -20,6 +21,7 @@ import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
     HomeComponent,
     DetailProductComponent,
     NavBarComponent,
+    PorfileComponent,
     
   ],
   imports: [

@@ -1,0 +1,35 @@
+.list-group {
+    margin-right: 10pc;
+}
+
+.active {
+    background-color: #C4C4C4;
+    color: black;
+    border-color: gray;
+    padding-right: 100px;
+}
+
+.item:hover {
+    background-color: #c4c4c4d7;
+    cursor: pointer;
+}
+
+.item:active {
+    background-color: #C4C4C4;
+    color: black;
+    border-color: rgb(69, 68, 68);
+}
+
+.menu {
+    height: 100vh;
+    border-right: 1px solid gray;
+}
+
+.list-group {
+    margin-right: 0px!important;
+    margin-left: 80px!important;
+}
+
+.divporfile {
+    margin: 3rem
+}
