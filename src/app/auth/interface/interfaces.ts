@@ -2,12 +2,12 @@ export interface LoginResponse{
     ok      : boolean;
     verified? : boolean;
     msj     : string;
-    client? : Client;
+    biker? : Biker;
     token?  : string;
   
   }
   
-  export interface Client {
+  export interface Biker {
     _id: string;
     firstName: string;
     lastName: string;
@@ -15,5 +15,12 @@ export interface LoginResponse{
     email: string;
     status: boolean;
     verified: boolean;
+    identity: string;
+
   }
   
+  export interface RegisterBiker {
+    msj: string,
+    id: string,
+    biker: Biker,
+  }

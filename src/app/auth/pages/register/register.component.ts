@@ -9,7 +9,8 @@ import { AlertType, ColorAlert, NameAlert } from '../../../shared/interfaces/ale
 import { faCheckCircle, faTimesCircle, faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
+import { BikersService } from '../../services/biker.service';
+
 
 @Component({
   selector: 'app-register',
@@ -30,12 +31,13 @@ export class RegisterComponent implements OnInit {
     terms:['',[Validators.required]]
   })
 
-
   constructor(
     private fb:FormBuilder,
     private validatorService:ValidatorService,
+    public  dialog        : MatDialog,
     private router:Router,
-    private auth  : AuthService
+    private biker  : BikersService
+
   ) { 
     
   }
@@ -50,6 +52,7 @@ export class RegisterComponent implements OnInit {
             this.myForm.get(camp)?.touched;
   }
   register(){
+
     this.laoding = true;
     this.myForm.markAllAsTouched();
     if (this.myForm.invalid) {
@@ -64,12 +67,43 @@ export class RegisterComponent implements OnInit {
 
     }
 
+    const {id,name,lastname,phone,email,password,terms} = this.myForm.value;
+   
+    this.biker.registerBiker(email,name,lastname,phone,password,id).subscribe(resp=>{
+
+
+      if(resp.ok){
+        this.alert = {
+          name: NameAlert.success,
+          icon: faCheckCircle,
+          msj:"Usuario registrado",
+          color: ColorAlert.success
+        }
+        this.openDialog();
+        this.router.navigateByUrl('/auth/verified')
+
+      }else{
+        this.alert = {
+          name: NameAlert.error,
+          icon: faTimesCircle,
+          msj:"El correo ya está registrado",
+          color: ColorAlert.error
+
+        }
+        this.openDialog();
+
+      }
+      
+    })
     
   this.laoding = false;
   }
 
   openDialog(){
-    
+    this.dialog.open(AlertComponent,{
+      hasBackdrop: false,
+      data: this.alert
+    });
   }
 
   showPass(){
