@@ -5,6 +5,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { VerifiedComponent } from './pages/verified/verified.component';
 import { InfoComponent } from './pages/info/info.component';
 import { MainComponent } from './pages/main/main.component';
+import { ApproveComponent } from './pages/approve/approve.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,8 @@ const routes: Routes = [
       {path:'register', component:RegisterComponent},
       {path:'verified', component:VerifiedComponent},
       {path:'info', component:InfoComponent},
+      {path:'approve', component:ApproveComponent},
+
     ]
   }
 ];

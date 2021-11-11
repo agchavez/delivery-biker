@@ -12,6 +12,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
 import { MatDialogModule } from '@angular/material/dialog';
 
+import {MatStepperModule} from '@angular/material/stepper';
+
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -24,7 +27,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatIconModule,
     MatDatepickerModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
+    MatStepperModule,
+    MatProgressSpinnerModule
   ]
   
 

@@ -1,48 +1,83 @@
-.textN {
+.btn-verified {
+    border-color: #DB6D0B;
+    background-color: transparent;
+    border: 0.5px solid #DB6D0B;
     color: #DB6D0B;
-    font-weight: bold;
-    text-align: initial;
+    width: 267px;
+    height: 55px;
+    border-radius: 11px;
+    font-size: 24px;
 }
 
-h2 {
-    padding: 0!important;
-    text-align: initial;
+.tittle-container {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: start;
+}
+
+.sub-title {
+    margin-top: 40px !important;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.input-container {
+    margin-top: 40px !important;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.img-verified {
+    width: 250px;
+}
+
+.container-end {
+    margin-top: 60px !important;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.rounded {
+    border-radius: 12px !important;
+}
+
+.row {
+    height: 80vh;
+}
+
+.container-info {
+    height: 55vh;
+    margin: auto;
+}
+
+.container-img {
+    height: 40vh;
+    margin: auto;
+    text-align: center;
 }
 
 @media only screen and (max-width: 450px) {
-    img {
-        width: inherit;
+    .row {
+        height: auto;
     }
-    .verificar-div {
-        text-align: center!important;
+    .tittle-container {
+        font-size: 26px;
+        font-weight: bold;
+        text-align: start;
     }
-    .div-text div {
-        margin-right: 0!important;
+    .container-info {
+        height: auto;
+        margin: auto;
+        margin-top: 20px;
     }
-    .verificar {
-        margin-right: 0;
-        padding-left: 15vh;
-        padding-right: 15vh;
+    .container-btn {
+        text-align: center;
+        margin: auto;
     }
-}
-
-.verificar {
-    color: #DB6D0B;
-    background-color: transparent;
-    border: 1px solid #DB6D0B;
-    padding: 1rem 3rem;
-    margin-left: 15px;
-    border-radius: 4px;
-    font-size: large;
-    margin-right: 5%;
-}
-
-.verificar:hover {
-    background-color: #DB6D0B;
-    color: white;
-}
-
-.div-text {
-    margin-top: auto;
-    margin-bottom: auto;
+    .img-verified {
+        width: 200px;
+    }
+    .container-img {
+        height: auto;
+    }
 }

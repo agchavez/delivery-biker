@@ -4,18 +4,18 @@ import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { catchError, map, tap} from "rxjs/operators";
 import { of } from "rxjs";
-import { LoginResponse, Client } from '../interface/interfaces';
+import { LoginResponse, Biker } from '../interface/interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private baseUrl:string = environment.baseUrl;
-  private _client!: Client;
+  private _biker!: Biker;
 
 
   get client(){
-    return {...this._client}
+    return {...this._biker}
   }
 
   constructor(
@@ -67,7 +67,7 @@ export class AuthService {
             map(resp =>{
               if (resp.ok) {
                 localStorage.setItem('token', resp.token!);
-                this._client = resp.client!;
+                this._biker = resp.biker!;
 
               }
                return resp.ok

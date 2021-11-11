@@ -17,6 +17,7 @@ import { InfoComponent } from './pages/info/info.component';
 import { SharedModule } from '../shared/shared.module';
 import { MaterialModule } from '../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ApproveComponent } from './pages/approve/approve.component';
 
 
 
@@ -28,6 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MainComponent,
     VerifiedComponent,
     InfoComponent,
+    ApproveComponent,
   ],
   imports: [
     AuthRoutingModule,
