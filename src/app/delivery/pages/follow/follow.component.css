@@ -1,0 +1,128 @@
+.mat-form-field+.mat-form-field {
+    margin-left: 8px;
+}
+
+.cont2 {
+    height: 263px;
+}
+
+.stateCont {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#camion {
+    font-size: 30px;
+}
+
+.stateSpan {
+    font-size: 25px;
+}
+
+.tittle {
+    color: #DB6D0B;
+    font-size: x-large;
+    font-weight: 500;
+    padding: 3px;
+}
+
+.btnEntregar {
+    background: transparent;
+    color: #DB6D0B;
+    border: 1px solid;
+    border-radius: 2rem;
+    padding: 10px 110px;
+    margin-bottom: 20px;
+}
+
+.btnEntregar:hover {
+    background-color: #DB6D0B;
+    color: white;
+}
+
+.btnRegresar {
+    background: #e9ecef;
+    color: gray;
+    border: 1px solid transparent;
+    border-radius: 2rem;
+    padding: 10px 125px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    align-items: flex-start!important;
+    margin-left: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.buttons {
+    margin-top: -174px;
+}
+
+.cont2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.name {
+    font-size: x-large;
+    font-weight: 600;
+}
+
+.productCant {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    font-size: large;
+}
+
+.icons {
+    padding-right: 20px;
+    font-size: xx-large;
+}
+
+.root {
+    display: flex;
+    justify-content: space-around;
+}
+
+.expanded {
+    width: 40%;
+}
+
+.map {
+    width: inherit;
+    padding-left: 20px;
+}
+
+.buttons {
+    margin-top: -174px;
+}
+
+@media(max-width:480px) {
+    .root {
+        flex-direction: column;
+    }
+    .expanded {
+        width: 100%;
+    }
+    .map {
+        width: 100%;
+        padding-bottom: 20px;
+        height: 301px;
+        margin-bottom: 175px;
+        height: 246px;
+    }
+    .buttons {
+        align-items: center!important;
+        margin-left: 0;
+        margin-top: 1px;
+    }
+    .map {
+        height: 301px;
+        margin-bottom: 175px;
+    }
+}

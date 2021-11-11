@@ -12,6 +12,7 @@ import { SharedModule } from '../shared/shared.module';
 import { FontAwesomeModule,FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
 import { PorfileComponent } from './pages/porfile/porfile.component';
+import { FollowComponent } from './pages/follow/follow.component';
 
 
 
@@ -22,6 +23,8 @@ import { PorfileComponent } from './pages/porfile/porfile.component';
     DetailProductComponent,
     NavBarComponent,
     PorfileComponent,
+    FollowComponent,
+    
     
   ],
   imports: [
@@ -29,7 +32,8 @@ import { PorfileComponent } from './pages/porfile/porfile.component';
     DeliveryRoutingModule,
     SharedModule,
     MaterialModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    
   ]
 })
 export class DeliveryModule {

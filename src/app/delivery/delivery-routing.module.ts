@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { MainComponent } from './pages/main/main.component';
 import { DetailProductComponent } from './pages/detail-product/detail-product.component';
 import { PorfileComponent } from './pages/porfile/porfile.component';
+import { FollowComponent } from './pages/follow/follow.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,9 @@ const routes: Routes = [
     children:[
       {path:'home', component:HomeComponent},
       {path:'detail', component:DetailProductComponent},
-      {path:'porfile', component:PorfileComponent}
+      {path:'porfile', component:PorfileComponent},
+      {path:'follow', component:FollowComponent}
+
     ]
   }
 ];
