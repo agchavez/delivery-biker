@@ -45,13 +45,13 @@
     color: gray;
     border: 1px solid transparent;
     border-radius: 2rem;
-    padding: 10px 125px;
+    padding: 10px 117px;
     margin-bottom: 20px;
 }
 
 .buttons {
     align-items: flex-start!important;
-    margin-left: 6rem;
+    margin-left: 9rem;
     display: flex;
     flex-direction: column;
     align-items: center
@@ -115,14 +115,11 @@
         height: 301px;
         margin-bottom: 175px;
         height: 246px;
+        padding-left: 0;
     }
     .buttons {
         align-items: center!important;
         margin-left: 0;
-        margin-top: 1px;
-    }
-    .map {
-        height: 301px;
-        margin-bottom: 175px;
+        margin-top: 32px;
     }
 }
