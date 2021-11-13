@@ -23,7 +23,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   width: 289px;
   height: 55px;
   color: white;
-  font-size: 24px;
+  font-size: 20px;
+
 }
 .mat-progress-spinner circle, .mat-spinner circle{
   stroke:#DB6D0B !important;
@@ -67,7 +68,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   border: 1px initial #DB6D0B;
   color: #DB6D0B;
   background-color: white;
-  font-size: 14px;
+  font-size: 20px ;
   font-weight: 500;
   height: 50px;
   width: 132px;
@@ -79,7 +80,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   color: #DB6D0B;
 }
 .btn-basic-solid{
-  font-size: 14px;
+  font-size: 20px !important;
   font-weight: 500;
   height: 50px;
   width: 132px;
@@ -107,6 +108,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     width: 100%;
     margin-bottom: 10px;
 
+  }
+  .btn-basic{
+    width: 95%;
+    margin: auto  ;
   }
 }
 
