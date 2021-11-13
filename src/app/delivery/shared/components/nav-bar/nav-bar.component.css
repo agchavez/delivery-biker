@@ -1,0 +1,20 @@
+.navbar-light {
+    height: 70px;
+    box-shadow: grey;
+    text-align: start;
+}
+
+.subtitle {
+    margin-top: 6px;
+    margin-left: 5px;
+}
+
+.container-fluid {
+    justify-content: space-between;
+}
+
+@media(max-width:480px) {
+    #name {
+        display: none;
+    }
+}

@@ -1,0 +1,67 @@
+<div class="container root">
+
+
+    <div class="cont2">
+        <div>
+            <mat-accordion class="expanded">
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class="tittle">
+                            Detalles del pedido
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <h3 class="name">Pizza Hut</h3>
+                    <div style="display: flex;">
+                        <fa-icon [icon]="['fas', 'map-pin']" class="icons"></fa-icon>
+                        <div>
+                            PizzaHut, Tegucigalpa, Col. Las mercedes esquina opuesta a variedades 123
+
+                        </div>
+                    </div>
+
+                    <div class="productCant">
+                        <div>
+                            Pizza 4 quesos
+                        </div>
+                        <div>X2</div>
+                    </div>
+
+                    <div class="productCant">
+                        <div>
+                            CocaCola 3L.
+                        </div>
+                        <div>X1</div>
+                    </div>
+                </mat-expansion-panel>
+
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class="tittle">
+                            Detalles de la entrega
+                        </mat-panel-title>
+
+                    </mat-expansion-panel-header>
+                    <h3 class="name">Daniela Zavala</h3>
+                    <div style="display: flex;">
+                        <fa-icon [icon]="['fas', 'map-marker']" class="icons"></fa-icon>
+                        <div>
+                            PizzaHut, Tegucigalpa, Col. Las mercedes esquina opuesta a variedades 123
+
+                        </div>
+                    </div>
+
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+
+
+    </div>
+
+    <app-map class="map"></app-map>
+
+
+</div>
+<div class="buttons">
+    <button class="btnEntregar" routerLink="../follow">Tomar entrega</button>
+    <button class="btnRegresar">Regresar</button>
+</div>
