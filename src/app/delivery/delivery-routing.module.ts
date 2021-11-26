@@ -5,6 +5,7 @@ import { MainComponent } from './pages/main/main.component';
 import { DetailProductComponent } from './pages/detail-product/detail-product.component';
 import { PorfileComponent } from './pages/porfile/porfile.component';
 import { FollowComponent } from './pages/follow/follow.component';
+import { OrderComponent } from './pages/order/order.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
       {path:'detail', component:DetailProductComponent},
       {path:'porfile', component:PorfileComponent},
       {path:'follow', component:FollowComponent},
+      {path:'order', component:OrderComponent},
 
     ]
   }

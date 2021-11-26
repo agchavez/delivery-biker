@@ -13,10 +13,9 @@ import { FontAwesomeModule,FaIconLibrary } from '@fortawesome/angular-fontawesom
 import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
 import { PorfileComponent } from './pages/porfile/porfile.component';
 import { FollowComponent } from './pages/follow/follow.component';
-import { ListProductComponent } from './pages/list-product/list-product.component';
 import { OrderComponent } from './pages/order/order.component';
 
-
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -26,20 +25,21 @@ import { OrderComponent } from './pages/order/order.component';
     NavBarComponent,
     PorfileComponent,
     FollowComponent,
-    ListProductComponent,
     OrderComponent,
-    
-    
+
+
   ],
   imports: [
     CommonModule,
     DeliveryRoutingModule,
     SharedModule,
+    ChartsModule,
     MaterialModule,
+
     FontAwesomeModule,
-    
+
   ]
 })
 export class DeliveryModule {
-  
+
  }

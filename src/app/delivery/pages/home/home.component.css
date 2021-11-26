@@ -1,0 +1,41 @@
+.title-resp{
+  font-size: 24px;
+
+}
+
+.btn-next{
+  width: 130px;
+  height: 35px;
+
+}
+
+.container-title{
+  font-size: 36px;
+  line-height: 40px;
+}
+
+.btn-continue{
+  width: 417px;
+  background-color: #DB6D0B;
+}
+
+.container-btn{
+  width: 417px;
+  margin: auto;
+  margin-top: 200px;
+}
+
+@media only screen and (max-width: 450px) {
+  .container-btn{
+    width: 90vw;
+    margin: auto;
+    margin-top: 40px;
+  }
+  .btn-continue{
+    width: 90%;
+    margin: auto;
+  }
+  .container-graph{
+    margin-top: 40px;
+  }
+}
