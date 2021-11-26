@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { SelectLocationComponent } from '../../components/select-location/select-location.component';
 
 @Component({
   selector: 'app-order',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
-
+  @ViewChild('myModal') modal!: SelectLocationComponent;
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+  open(){
+    this.modal.open();
   }
 
 }

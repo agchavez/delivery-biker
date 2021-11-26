@@ -1,1 +1,39 @@
-<p>order works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 d-flex" style="justify-content: space-between;">
+      <p class="title">Pedidos pendientes de entrega</p>
+      <div class="container-location" (click)="open()">
+        <fa-icon [icon] ="['fas', 'map-marked-alt']"></fa-icon>
+        <p class="ms-3 location">  Tegucigalpa</p>
+      </div>
+    </div>
+    <div class="col-12 d-flex container-title-table">
+      <p></p>
+      <p class="ms-5">Productos <fa-icon  class="mt" [icon] ="['fas', 'angle-down']"></fa-icon></p>
+      <p>Entrega <fa-icon  class="mt" [icon] ="['fas', 'angle-down']"></fa-icon></p>
+      <p>Empresa <fa-icon  class="mt" [icon] ="['fas', 'angle-down']"></fa-icon></p>
+      <p></p>
+    </div>
+    <div class="col-12 container-orders shadow">
+      <div class="order">
+        <img src="https://www.paredro.com/wp-content/uploads/2014/11/pizza-hut-new-logo.jpg" class="img">
+        <p class="mt">2 Productos </p>
+        <p class="mt">Col. Kennedy</p>
+        <p class="mt"><b>PitzaHut</b></p>
+        <fa-icon  class="mt" [icon] ="['fas', 'chevron-right']"></fa-icon>
+      </div>
+      <!-- <i class="fas fa-chevron-right"><//i> -->
+    </div>
+    <div class="col-12 container-orders shadow">
+      <div class="order">
+        <img src="https://www.paredro.com/wp-content/uploads/2014/11/pizza-hut-new-logo.jpg" class="img">
+        <p class="mt">2 Productos</p>
+        <p class="mt">Col. Kennedy</p>
+        <p class="mt"><b>PitzaHut</b></p>
+        <fa-icon  class="mt" [icon] ="['fas', 'chevron-right']"></fa-icon>
+      </div>
+      <!-- <i class="fas fa-chevron-right"><//i> -->
+    </div>
+  </div>
+  <app-select-location #myModal></app-select-location>
+</div>
