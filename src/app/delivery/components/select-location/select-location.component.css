@@ -1,0 +1,11 @@
+label{
+  color: #DB6D0B;
+}
+.modal-title{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.modal-dialog{
+  margin-top: 50% !important;
+}

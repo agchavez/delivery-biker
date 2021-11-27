@@ -14,10 +14,10 @@ const routes: Routes = [
     component:MainComponent,
     children:[
       {path:'home', component:HomeComponent},
-      {path:'detail', component:DetailProductComponent},
+      {path:'detail/:id', component:DetailProductComponent},
       {path:'porfile', component:PorfileComponent},
       {path:'follow', component:FollowComponent},
-      {path:'order', component:OrderComponent},
+      {path:'list', component:OrderComponent},
 
     ]
   }

@@ -16,7 +16,7 @@ import { far  } from "@fortawesome/free-regular-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 
-
+import {NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
@@ -31,7 +31,8 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
     MatDialogModule,
     MatStepperModule,
     MatProgressSpinnerModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgbModule
   ]
 
 
