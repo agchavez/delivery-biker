@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { LoginResponse } from '../../interface/interfaces';
+import { AlertType, ColorAlert, NameAlert } from 'src/app/shared/interfaces/alert.interface';
+import { AlertComponent } from 'src/app/shared/components/alert/alert.component';
+import { faCheckCircle, faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +15,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginComponent implements OnInit {
   show:boolean = false;
+  alert!:AlertType;
   myForm = this.formbuild.group({
     email: ['', [ Validators.required, Validators.email]],
     password: ['', [ Validators.required, Validators.minLength(6)]]
@@ -16,7 +23,9 @@ export class LoginComponent implements OnInit {
 
   constructor(
   private formbuild: FormBuilder,
-  private authService: AuthService
+  public  dialog        : MatDialog,
+  private authService: AuthService,
+  private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -30,6 +39,13 @@ export class LoginComponent implements OnInit {
   login(){
     this.myForm.markAllAsTouched();
     if (!this.myForm.valid) {
+      this.alert = {
+        name: NameAlert.warnig,
+        icon: faExclamationCircle,
+        msj:"Datos requeridos",
+        color: ColorAlert.warnig
+      }
+      this.openDialog();
       return
     }
     const body =  {
@@ -37,10 +53,56 @@ export class LoginComponent implements OnInit {
       password: this.myForm.value.password
     }
     this.authService.login(body.email, body.password).subscribe(
-      res => {
-        console.log(res)
+      (res: any) => {
+        console.log(res);
+
+        //Correo y contraseña correctos
+        if (res.ok) {
+          this.router.navigate(['/delivery']);
+        }else{
+           if (res.verified === undefined) {
+            this.alert = {
+              name: NameAlert.warnig,
+              icon: faExclamationCircle,
+              msj:"Datos incorrectos",
+              color: ColorAlert.warnig
+            }
+            this.openDialog();
+
+          }else if(res.verified === false){
+            this.alert = {
+              name: NameAlert.warnig,
+              icon: faExclamationCircle,
+              msj:"Correo no verificado",
+              color: ColorAlert.warnig
+            }
+            this.openDialog();
+            this.router.navigateByUrl('/auth/verified');
+          }else if(res.verified === true){
+            console.log("here");
+
+            this.alert = {
+              name: NameAlert.warnig,
+              icon: faExclamationCircle,
+              msj:"Se necesita mas informacion",
+              color: ColorAlert.warnig
+            }
+            this.openDialog();
+            this.router.navigateByUrl('/auth/info');
+          }else if(res.aproved === false){
+            this.alert = {
+              name: NameAlert.warnig,
+              icon: faExclamationCircle,
+              msj:"Usuario no aprobado",
+              color: ColorAlert.warnig
+          }
+          this.openDialog();
+          this.router.navigateByUrl('/auth/approve');
+        }
       }
+    }
     )
+
 
     }
     validatorCampo(campo: string){
@@ -51,5 +113,11 @@ export class LoginComponent implements OnInit {
 
 
 
+openDialog(){
+  this.dialog.open(AlertComponent,{
+    hasBackdrop: false,
+    data: this.alert
+  });
+}
 
   }

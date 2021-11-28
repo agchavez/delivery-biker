@@ -23,7 +23,7 @@ export class AuthService {
   ) { }
 
   login(email:string, password:string){
-    const url = `${this.baseUrl}/client/login`;
+    const url = `${this.baseUrl}/biker/login`;
     const body = {email,password}
 
     return this.http.post<LoginResponse>(url,body)
@@ -41,14 +41,19 @@ export class AuthService {
                 catchError( err => {
 
                   const temp:any  = err.error;
+                  console.log(temp);
 
-                  if (temp.verified != undefined) {
+                  if (temp.verified === false) {
                       localStorage.setItem('email-verfied', email);
                       return of({
                         ok: false,
                         verified: false
                       });
 
+                    }else if(temp.aproved === false){
+                      return of({ok: false, verified: true, aproved:false})
+                    }else if(temp.verified === true){
+                      return of({ok: false, verified: true})
                     }
 
                     return of({ok: false, verified: undefined})}
@@ -56,10 +61,10 @@ export class AuthService {
               );
   }
 
-  ///client/validate
+  ///biker/validate
 
   validateToken ():Observable<boolean>{
-    const url = `${this.baseUrl}/client/validate`;
+    const url = `${this.baseUrl}/biker/validate`;
     const headers = new HttpHeaders()
       .set('x-token', localStorage.getItem('token') || '')
     return this.http.get<LoginResponse>(url, { headers })
@@ -88,7 +93,7 @@ export class AuthService {
   //TODO:Verificar codigo de verificacion del usuario
   verifiedCode(code:number){
     const email = localStorage.getItem('email-verfied');
-    const url = `${this.baseUrl}/client/check/code`
+    const url = `${this.baseUrl}/biker/check`
     const body = {
       code, email
     }

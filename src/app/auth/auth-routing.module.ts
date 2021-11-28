@@ -18,7 +18,7 @@ const routes: Routes = [
       {path:'verified', component:VerifiedComponent},
       {path:'info', component:InfoComponent},
       {path:'approve', component:ApproveComponent},
-
+      {path:'', redirectTo:'login', pathMatch:'full'}
     ]
   }
 ];

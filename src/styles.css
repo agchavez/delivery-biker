@@ -26,6 +26,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   font-size: 20px;
 
 }
+.mat-dialog-container{
+  display: contents !important;
+}
+
 .mat-progress-spinner circle, .mat-spinner circle{
   stroke:#DB6D0B !important;
 }
