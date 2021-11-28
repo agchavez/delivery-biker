@@ -13,11 +13,12 @@ const routes: Routes = [
     path:'',
     component:MainComponent,
     children:[
-      {path:'home', component:HomeComponent},
+      {path:'', component:HomeComponent},
       {path:'detail/:id', component:DetailProductComponent},
       {path:'porfile', component:PorfileComponent},
       {path:'follow', component:FollowComponent},
       {path:'list', component:OrderComponent},
+      {path:'**' , redirectTo:''}
 
     ]
   }

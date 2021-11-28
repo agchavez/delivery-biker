@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12 container-title">
-      <p>Bienvenido Angel, listo para tomar pedidos?</p>
+      <p>Bienvenido <b>{{name |titlecase}}</b>, listo para tomar pedidos?</p>
 
     </div>
     <div class="col-lg-7 col-sm-12 container-info" >
@@ -28,7 +28,7 @@
             <mat-step>
               <ng-template matStepLabel>No estoy bajo efectos del alcohol</ng-template>
               <div>
-                <button  class="btn-basic-solid btn-next" mat-button (click)="next()">Acepto</button>
+                <button (click)="aproved = true"   class="btn-basic-solid btn-next" mat-button >Acepto</button>
               </div>
             </mat-step>
           </mat-stepper>
@@ -36,7 +36,7 @@
 
         <div>
             <div class="container-btn">
-              <button [disabled]="true"  class=" btn-continue" mat-button (click)="next()">Empezar a repartir</button>
+              <button [disabled]="!aproved"  class=" btn-continue" mat-button (click)="next()">Empezar a repartir</button>
             </div>
         </div>
     </div>

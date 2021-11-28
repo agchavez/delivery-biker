@@ -22,11 +22,11 @@ const httpOptions = {
     constructor(private httpClient:HttpClient){
 
     }
-    
+
     getBiker(){
     // const url = `${this.baseUrl}/biker/all/?limit=4&offset=0`;
     // console.log('hola')
-    
+
 
     // this.httpClient.get('https://pidelow-backend-8zkq7.ondigitalocean.app/api/biker/all/?limit=4&offset=0',{}).subscribe(res=>
     //   console.log(res)
@@ -45,12 +45,10 @@ const httpOptions = {
       identity: identity
       }
 
-      console.log('registrar biker')
-      console.log(persona)
       return this.httpClient.post<RegisterBiker>(url,persona).pipe(tap(resp=>{
         console.log(resp.msj)
 
-      }), 
+      }),
       map( resp => {
         localStorage.setItem('email-verfied', email);
         return {ok :resp.msj
@@ -59,8 +57,8 @@ const httpOptions = {
         const temp:any  = err.error;
           return of({ok:false})
       }))
-      
-  } 
 
-  
+  }
+
+
   }

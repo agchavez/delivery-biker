@@ -14,7 +14,8 @@ export class AuthService {
   private _biker!: Biker;
 
 
-  get client(){
+  get biker(){
+
     return {...this._biker}
   }
 
@@ -66,6 +67,7 @@ export class AuthService {
   ///biker/validate
 
   validateToken ():Observable<boolean>{
+
     const url = `${this.baseUrl}/biker/validate`;
     const headers = new HttpHeaders()
       .set('x-token', localStorage.getItem('token') || '')
@@ -73,6 +75,8 @@ export class AuthService {
           .pipe(
             map(resp =>{
               if (resp.ok) {
+                console.log(resp);
+
                 localStorage.setItem('token', resp.token!);
                 this._biker = resp.biker!;
 

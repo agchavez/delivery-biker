@@ -15,6 +15,7 @@ import { faTimesCircle } from '@fortawesome/free-regular-svg-icons';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  loading = false;
   show:boolean = false;
   alert!:AlertType;
   myForm = this.formbuild.group({
@@ -38,13 +39,14 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
+    this.loading = true;
     this.myForm.markAllAsTouched();
     if (!this.myForm.valid) {
       this.alert = {
-        name: NameAlert.warnig,
-        icon: faExclamationCircle,
+        name: NameAlert.error,
+        icon: faTimesCircle,
         msj:"Datos requeridos",
-        color: ColorAlert.warnig
+        color: ColorAlert.error
       }
       this.openDialog();
       return
@@ -102,6 +104,7 @@ export class LoginComponent implements OnInit {
           this.router.navigateByUrl('/auth/approve');
         }
       }
+      this.loading = false;
     }
     )
 
