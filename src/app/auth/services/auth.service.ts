@@ -35,13 +35,14 @@ export class AuthService {
                   }
                 }),
                 map( resp => {
+                  console.log(resp);
+
                   localStorage.removeItem('email-verfied');
                   return {ok :resp.ok, verified: true
                   }}),
                 catchError( err => {
 
                   const temp:any  = err.error;
-                  console.log(temp);
 
                   if (temp.verified === false) {
                       localStorage.setItem('email-verfied', email);
@@ -50,12 +51,13 @@ export class AuthService {
                         verified: false
                       });
 
-                    }else if(temp.aproved === false){
+                    }else if(temp.verified && !temp.aproved){
+                      localStorage.setItem('email-verfied', email);
                       return of({ok: false, verified: true, aproved:false})
-                    }else if(temp.verified === true){
+                    }else if(temp.verified){
+                      localStorage.setItem('email-verfied', email);
                       return of({ok: false, verified: true})
                     }
-
                     return of({ok: false, verified: undefined})}
                   )
               );
@@ -111,6 +113,25 @@ export class AuthService {
     ;
 
 
+  }
+
+  //Subir images del usuario
+  uploadImage(imgCard:File,imgLicense:File){
+    const url = `${this.baseUrl}/biker/info`;
+    const formData = new FormData();
+    formData.append('imgCard',imgCard);
+    formData.append('imgLicense',imgLicense);
+    formData.append('email',localStorage.getItem('email-verfied') || "");
+
+    return this.http.put(url, formData, )
+  }
+
+  //Validar si la cuenta ha sido aprovada
+  isAproved():Observable<LoginResponse>{
+    const email = localStorage.getItem('email-verfied') || "";
+    const url = `${this.baseUrl}/biker/isAproved`;
+    const body = {email}
+    return this.http.post<LoginResponse>(url, body)
   }
 
 

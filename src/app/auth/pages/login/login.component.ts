@@ -7,6 +7,7 @@ import { AlertType, ColorAlert, NameAlert } from 'src/app/shared/interfaces/aler
 import { AlertComponent } from 'src/app/shared/components/alert/alert.component';
 import { faCheckCircle, faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 import { MatDialog } from '@angular/material/dialog';
+import { faTimesCircle } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-login',
@@ -62,10 +63,10 @@ export class LoginComponent implements OnInit {
         }else{
            if (res.verified === undefined) {
             this.alert = {
-              name: NameAlert.warnig,
-              icon: faExclamationCircle,
+              name: NameAlert.error,
+              icon: faTimesCircle,
               msj:"Datos incorrectos",
-              color: ColorAlert.warnig
+              color: ColorAlert.error
             }
             this.openDialog();
 
@@ -77,9 +78,10 @@ export class LoginComponent implements OnInit {
               color: ColorAlert.warnig
             }
             this.openDialog();
+
+
             this.router.navigateByUrl('/auth/verified');
-          }else if(res.verified === true){
-            console.log("here");
+          }else if(res.verified === true && res.aproved === undefined){
 
             this.alert = {
               name: NameAlert.warnig,

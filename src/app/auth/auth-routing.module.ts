@@ -6,6 +6,8 @@ import { VerifiedComponent } from './pages/verified/verified.component';
 import { InfoComponent } from './pages/info/info.component';
 import { MainComponent } from './pages/main/main.component';
 import { ApproveComponent } from './pages/approve/approve.component';
+import { ValidateEmailGuard } from '../guards/validate-email.guard';
+import { ValidateTokenGuard } from '../guards/validate-token.guard';
 
 
 const routes: Routes = [
@@ -15,9 +17,9 @@ const routes: Routes = [
     children:[
       {path:'login', component:LoginComponent},
       {path:'register', component:RegisterComponent},
-      {path:'verified', component:VerifiedComponent},
-      {path:'info', component:InfoComponent},
-      {path:'approve', component:ApproveComponent},
+      {path:'verified', canActivate: [ValidateEmailGuard], canLoad: [ValidateEmailGuard] , component:VerifiedComponent},
+      {path:'info',canActivate: [ValidateEmailGuard], canLoad: [ValidateEmailGuard],  component:InfoComponent},
+      {path:'approve',canActivate: [ValidateEmailGuard], canLoad: [ValidateEmailGuard], component:ApproveComponent},
       {path:'', redirectTo:'login', pathMatch:'full'}
     ]
   }
