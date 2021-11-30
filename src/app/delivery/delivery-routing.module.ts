@@ -5,6 +5,7 @@ import { MainComponent } from './pages/main/main.component';
 import { DetailProductComponent } from './pages/detail-product/detail-product.component';
 import { PorfileComponent } from './pages/porfile/porfile.component';
 import { FollowComponent } from './pages/follow/follow.component';
+import { OrderComponent } from './pages/order/order.component';
 
 
 const routes: Routes = [
@@ -12,10 +13,12 @@ const routes: Routes = [
     path:'',
     component:MainComponent,
     children:[
-      {path:'home', component:HomeComponent},
-      {path:'detail', component:DetailProductComponent},
+      {path:'', component:HomeComponent},
+      {path:'detail/:id', component:DetailProductComponent},
       {path:'porfile', component:PorfileComponent},
-      {path:'follow', component:FollowComponent}
+      {path:'follow', component:FollowComponent},
+      {path:'list', component:OrderComponent},
+      {path:'**' , redirectTo:''}
 
     ]
   }

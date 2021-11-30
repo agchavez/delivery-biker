@@ -47,7 +47,7 @@
   border-radius: 11px;
   width: 289px;
   height: 55px;
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 35px;
   color: white;
   background-color: transparent;
@@ -81,8 +81,9 @@
 
 
 .text-register{
-  font-size: 24px;
+  font-size: 20 px;
   font-weight: 200;
+  text-decoration: underline;
 }
 .text-register:hover{
   cursor: pointer;

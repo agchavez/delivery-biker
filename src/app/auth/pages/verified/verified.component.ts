@@ -63,7 +63,7 @@ export class VerifiedComponent implements OnInit {
               color: ColorAlert.success
             }
             this.openDialog();
-            this.router.navigateByUrl('auth');
+            this.router.navigateByUrl('/auth/login');
           }
         }
         );

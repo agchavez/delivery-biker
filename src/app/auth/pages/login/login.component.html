@@ -1,22 +1,22 @@
-<div class="container">
+<div class="container animate__animated animate__fadeIn">
     <div class="row">
         <div class="col-xl-6 col-sm-12 content mt-5">
             <h1 class="title-login">Inicia Sesion</h1>
             <p class="mt-text">Motorista</p>
 
             <div class="form-content">
-                <form action="" autocomplete="off">
+                <form action="" autocomplete="off" [formGroup]=" myForm " (submit)="login()">
                     <div class="p-3">
-                        <input type="email" class="form-control" formControlName="email" placeholder="Escribe tu correo">
+                        <input type="email" formControlName="email" class="form-control" formControlName="email" placeholder="Escribe tu correo">
                         <div class="w-100 text-start p-1">
 
-                            <span class="form-text text-danger" *ngIf="false">
+                            <span class="form-text text-danger" *ngIf="validatorCampo('email')">
                             El correo es requerido
                       </span>
                         </div>
                     </div>
                     <div class="input-group p-3 m-1s">
-                        <input type="password" [ngClass]="{'invalid-form': false}" class="form-control" formControlName="password" placeholder="Escribe tu contraseña">
+                        <input formControlName="password" [type] = "!show? 'password': 'text'" [ngClass]="{'invalid-form': false}" class="form-control" formControlName="password" placeholder="Escribe tu contraseña">
                         <div class="input-group-append" (click)="showPass()">
                             <span class="input-group-text">
                       <fa-icon *ngIf="!show" [icon] ="['far', 'eye-slash']"></fa-icon>
@@ -24,7 +24,7 @@
                     </span>
                         </div>
                         <div class="w-100 text-start p-1">
-                            <span *ngIf="false" class="form-text text-danger">
+                            <span *ngIf="validatorCampo('password')" class="form-text text-danger">
                         La contraseña es requerida
                   </span>
                         </div>
@@ -39,7 +39,7 @@
                     </div>
                     <div class="mt-2">
 
-                        <button type="submit" mat-raised-button class="btn-basic mt-5">Entrar</button>
+                        <button [disabled]="loading" type="submit" mat-raised-button class="btn-basic mt-5">Entrar</button>
                     </div>
 
                 </form>

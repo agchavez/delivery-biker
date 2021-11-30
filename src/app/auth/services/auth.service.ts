@@ -14,7 +14,8 @@ export class AuthService {
   private _biker!: Biker;
 
 
-  get client(){
+  get biker(){
+
     return {...this._biker}
   }
 
@@ -23,7 +24,7 @@ export class AuthService {
   ) { }
 
   login(email:string, password:string){
-    const url = `${this.baseUrl}/client/login`;
+    const url = `${this.baseUrl}/biker/login`;
     const body = {email,password}
 
     return this.http.post<LoginResponse>(url,body)
@@ -35,6 +36,8 @@ export class AuthService {
                   }
                 }),
                 map( resp => {
+                  console.log(resp);
+
                   localStorage.removeItem('email-verfied');
                   return {ok :resp.ok, verified: true
                   }}),
@@ -42,30 +45,38 @@ export class AuthService {
 
                   const temp:any  = err.error;
 
-                  if (temp.verified != undefined) {
+                  if (temp.verified === false) {
                       localStorage.setItem('email-verfied', email);
                       return of({
                         ok: false,
                         verified: false
                       });
 
+                    }else if(temp.verified && !temp.aproved){
+                      localStorage.setItem('email-verfied', email);
+                      return of({ok: false, verified: true, aproved:false})
+                    }else if(temp.verified){
+                      localStorage.setItem('email-verfied', email);
+                      return of({ok: false, verified: true})
                     }
-
                     return of({ok: false, verified: undefined})}
                   )
               );
   }
 
-  ///client/validate
+  ///biker/validate
 
   validateToken ():Observable<boolean>{
-    const url = `${this.baseUrl}/client/validate`;
+
+    const url = `${this.baseUrl}/biker/validate`;
     const headers = new HttpHeaders()
       .set('x-token', localStorage.getItem('token') || '')
     return this.http.get<LoginResponse>(url, { headers })
           .pipe(
             map(resp =>{
               if (resp.ok) {
+                console.log(resp);
+
                 localStorage.setItem('token', resp.token!);
                 this._biker = resp.biker!;
 
@@ -88,7 +99,7 @@ export class AuthService {
   //TODO:Verificar codigo de verificacion del usuario
   verifiedCode(code:number){
     const email = localStorage.getItem('email-verfied');
-    const url = `${this.baseUrl}/client/check/code`
+    const url = `${this.baseUrl}/biker/check`
     const body = {
       code, email
     }
@@ -106,6 +117,25 @@ export class AuthService {
     ;
 
 
+  }
+
+  //Subir images del usuario
+  uploadImage(imgCard:File,imgLicense:File){
+    const url = `${this.baseUrl}/biker/info`;
+    const formData = new FormData();
+    formData.append('imgCard',imgCard);
+    formData.append('imgLicense',imgLicense);
+    formData.append('email',localStorage.getItem('email-verfied') || "");
+
+    return this.http.put(url, formData, )
+  }
+
+  //Validar si la cuenta ha sido aprovada
+  isAproved():Observable<LoginResponse>{
+    const email = localStorage.getItem('email-verfied') || "";
+    const url = `${this.baseUrl}/biker/isAproved`;
+    const body = {email}
+    return this.http.post<LoginResponse>(url, body)
   }
 
 

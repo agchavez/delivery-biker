@@ -9,20 +9,22 @@ h2 {
     text-align: initial;
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 400px) {
     img {
         width: inherit;
     }
     .verificar-div {
+      padding: 0px;
         text-align: center!important;
     }
     .div-text div {
         margin-right: 0!important;
     }
     .verificar {
-        margin-right: 0;
-        padding-left: 15vh;
-        padding-right: 15vh;
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+      padding: 0px;
+        width: 95%;
     }
 }
 

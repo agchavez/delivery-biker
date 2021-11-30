@@ -3,6 +3,15 @@ input {
     margin: 0;
     margin-top: 3px;
 }
+.title{
+  font-weight: 900;
+}
+.title-login{
+  color: #DB6D0B;
+  font-weight: bold;
+  font-size: 48px;
+  width: 100%;
+}
 
 #conds {
     width: 10%;
