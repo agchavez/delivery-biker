@@ -52,9 +52,9 @@ export class AuthService {
                         verified: false
                       });
 
-                    }else if(temp.verified && !temp.aproved){
+                    }else if(temp.verified && temp.aproved === null){
                       localStorage.setItem('email-verfied', email);
-                      return of({ok: false, verified: true, aproved:false})
+                      return of({ok: false, verified: true, aproved:null})
                     }else if(temp.verified){
                       localStorage.setItem('email-verfied', email);
                       return of({ok: false, verified: true})

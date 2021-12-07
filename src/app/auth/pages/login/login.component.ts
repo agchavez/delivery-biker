@@ -49,6 +49,7 @@ export class LoginComponent implements OnInit {
         color: ColorAlert.error
       }
       this.openDialog();
+      this.loading = false;
       return
     }
     const body =  {
@@ -57,6 +58,7 @@ export class LoginComponent implements OnInit {
     }
     this.authService.login(body.email, body.password).subscribe(
       (res: any) => {
+        console.log("------***********---------")
         console.log(res);
 
         //Correo y contraseña correctos
@@ -83,7 +85,7 @@ export class LoginComponent implements OnInit {
 
 
             this.router.navigateByUrl('/auth/verified');
-          }else if(res.verified === true && res.aproved === undefined){
+          }else if(res.verified === true && res.aproved === null){
 
             this.alert = {
               name: NameAlert.warnig,
