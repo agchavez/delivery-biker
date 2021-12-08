@@ -58,9 +58,6 @@ export class LoginComponent implements OnInit {
     }
     this.authService.login(body.email, body.password).subscribe(
       (res: any) => {
-        console.log("------***********---------")
-        console.log(res);
-
         //Correo y contraseña correctos
         if (res.ok) {
           this.router.navigate(['/delivery']);

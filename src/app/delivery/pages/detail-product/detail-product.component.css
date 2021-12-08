@@ -50,7 +50,13 @@
     font-size: x-large;
     font-weight: 600;
 }
-
+.map{
+  width: 80vw;
+  height: 60vh;
+}
+.btn-basic-solid{
+  width: 90%;
+}
 .productCant {
     display: flex;
     justify-content: space-between;
@@ -91,5 +97,13 @@
     .buttons {
         align-items: center!important;
         margin-left: 0;
+    }
+    .map{
+      width: 90vw;
+      height: 60vh;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 30px;
+      margin-bottom: 50px;
     }
 }

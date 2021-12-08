@@ -13,14 +13,7 @@ export interface OrderDetail {
   quantity:    number;
   totalLine:   number;
   _id:         string;
-  complements: Complement[];
-}
-
-export interface Complement {
-  name:      string;
-  quantity:  number;
-  totalLine: number;
-  _id:       string;
+  complements: any[];
 }
 
 export interface Product {
@@ -30,13 +23,43 @@ export interface Product {
 }
 
 export interface Company {
-  _id:    string;
-  name:   string;
-  imgUrl: string;
+  _id:       string;
+  phone:     string;
+  name:      string;
+  imgUrl:    string;
+  bannerUrl: string;
+  location:  Location;
+  __v:       number;
+}
+
+export interface Location {
+  lat:         string;
+  long:        string;
+  description: string;
 }
 
 export interface User {
   _id:       string;
   firstName: string;
   lastName:  string;
+}
+
+export interface OrderByIDResponse {
+  order:     OrderResponse;
+  direction: Direction;
+}
+
+export interface Direction {
+  _id:     string;
+  depto:   string;
+  muni:    string;
+  lat:     number;
+  long:    number;
+  idBuyer: string;
+}
+
+
+export interface PutStatusOrder {
+  ok:    boolean;
+  order: null;
 }
