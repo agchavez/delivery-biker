@@ -82,6 +82,9 @@
   margin-bottom: 20px !important;
 
 }
+.container{
+  height: 80vh;
+}
 .img{
   height: 42px;
 }

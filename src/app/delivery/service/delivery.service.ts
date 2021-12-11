@@ -1,12 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { OrderByIDResponse, OrderResponse, PutStatusOrder } from '../interface/order';
+import { environment } from '../../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DeliveryService {
-  baseUrl = 'http://localhost:8080/api/';
+  baseUrl = environment.baseUrl;
   constructor(
     private http: HttpClient,
   ) { }

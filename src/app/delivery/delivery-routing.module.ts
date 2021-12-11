@@ -16,7 +16,6 @@ const routes: Routes = [
       {path:'', component:HomeComponent},
       {path:'detail/:id', component:DetailProductComponent},
       {path:'porfile', component:PorfileComponent},
-      {path:'follow', component:FollowComponent},
       {path:'list', component:OrderComponent},
       {path:'**' , redirectTo:''}
 

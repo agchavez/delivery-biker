@@ -126,6 +126,8 @@ export class AuthService {
     formData.append('imgCard',imgCard);
     formData.append('imgLicense',imgLicense);
     formData.append('email',localStorage.getItem('email-verfied') || "");
+    console.log(formData.getAll('imgCard'));
+
 
     return this.http.put(url, formData, )
   }

@@ -52,9 +52,8 @@
 
     <div class="map" id="mapa"></div>
 
-
 </div>
 <div class="buttons">
   <button type="button" mat-raised-button class="btn-outline-light btn-register btn-basic-solid " (click)="next()" >{{estadoOrden}}</button>
-    <button class="btnRegresar">Regresar</button>
+    <button [disabled]="statusOrder != 'pending'" class="btnRegresar" routerLink="/delivery/list">Regresar</button>
 </div>
