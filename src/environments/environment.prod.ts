@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  baseUrl: 'https://pidelow-backend-8zkq7.ondigitalocean.app/api'
 };

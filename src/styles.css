@@ -1,1 +1,128 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.form-check-input:checked {
+  background-color: black !important;
+  border-color: black !important;
+}
+
+.form-check-input:focus{
+  box-shadow: none !important;
+}
+.form-check-input:active{
+  box-shadow: none;
+}
+.invalid-form{
+  border-color: red !important;
+}
+.btn-basic{
+  background-color: #DB6D0B;
+  border-radius: 11px;
+  width: 289px;
+  height: 55px;
+  color: white;
+  font-size: 20px;
+
+}
+.mat-dialog-container{
+  display: contents !important;
+}
+/* .mat-button-wrapper{
+  color: #DB6D0B;
+} */
+.mat-progress-spinner circle, .mat-spinner circle{
+  stroke:#DB6D0B !important;
+}
+.form-control{
+  border-radius: 0px;
+  border: none;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.486);
+  font-size: 20px;
+  font-weight: 400;
+}
+.input-group-text{
+  border-radius: 0px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.486);
+  font-size: 20px;
+  font-weight: 400;
+
+}
+
+.form-control:hover{
+  background-color: white;
+  box-shadow: none;
+  border:none;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.486);
+}
+
+.form-control:focus{
+  background-color: white;
+  box-shadow: none;
+  border:none;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.486);
+}
+
+.form-control:active{
+  background-color: white;
+}
+
+.btn-basic-trans{
+  border: 1px initial #DB6D0B;
+  color: #DB6D0B;
+  background-color: white;
+  font-size: 20px ;
+  font-weight: 500;
+  height: 50px;
+  width: 132px;
+
+
+}
+
+.btn-basic-trans:hover{
+  color: #DB6D0B;
+}
+.btn-basic-solid{
+  font-size: 20px !important;
+  font-weight: 500;
+  height: 50px;
+  width: 132px;
+  border-color: #DB6D0B;
+  color: white;
+  background-color: #DB6D0B;
+
+}
+.btn-basic-solid:hover{
+  border-color: #DB6D0B;
+  color: white;
+  background-color: #DB6D0B;
+
+}
+.mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit{
+  background-color: #DB6D0B;
+}
+
+@media only screen and (max-width: 450px) {
+
+  .btn-basic-solid{
+    width: 100%;
+    margin-bottom: 10px;
+
+  }
+  .btn-basic-trans{
+
+    width: 100%;
+    margin-bottom: 10px;
+
+  }
+  .btn-basic{
+    width: 95%;
+    margin: auto  ;
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

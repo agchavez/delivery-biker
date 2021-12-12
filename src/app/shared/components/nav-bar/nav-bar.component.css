@@ -1,0 +1,14 @@
+.navbar-light{
+  height: 70px;
+  box-shadow: grey;
+  text-align: start;
+}
+
+.subtitle{
+  margin-top: 15px;
+  margin-left: 5px;
+
+}
+.container-fluid{
+  justify-content: start;
+}

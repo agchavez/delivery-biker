@@ -1,0 +1,59 @@
+<div class="container root">
+
+
+    <div class="cont2">
+        <div>
+            <mat-accordion class="expanded">
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class="tittle">
+                            Detalles del pedido
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <h3 class="name">{{order.order.orderDetails[0].product.company.name}}</h3>
+                    <div style="display: flex;">
+                        <fa-icon [icon]="['fas', 'map-pin']" class="icons"></fa-icon>
+                        <div>
+                          {{order.order.orderDetails[0].product.company.location.description}}
+
+                        </div>
+                    </div>
+
+                    <div class="productCant" *ngFor="let product of order.order.orderDetails">
+                        <div>
+                            {{product.product.name}}
+                        </div>
+                        <div>{{product.quantity}}</div>
+                    </div>
+                </mat-expansion-panel>
+
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class="tittle">
+                            Detalles de la entrega
+                        </mat-panel-title>
+
+                    </mat-expansion-panel-header>
+                    <h3 class="name">Daniela Zavala</h3>
+                    <div style="display: flex;">
+                        <fa-icon [icon]="['fas', 'map-marker']" class="icons"></fa-icon>
+                        <div>
+                           {{order.direction.depto}} - {{order.direction.muni}}
+
+                        </div>
+                    </div>
+
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+
+
+    </div>
+
+    <div class="map" id="mapa"></div>
+
+</div>
+<div class="buttons">
+  <button type="button" mat-raised-button class="btn-outline-light btn-register btn-basic-solid " (click)="next()" >{{estadoOrden}}</button>
+    <button [disabled]="statusOrder != 'pending'" class="btnRegresar" routerLink="/delivery/list">Regresar</button>
+</div>

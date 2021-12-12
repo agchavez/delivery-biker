@@ -1,0 +1,76 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 container-title">
+      <p>Bienvenido <b>{{name |titlecase}}</b>, listo para tomar pedidos?</p>
+
+    </div>
+    <div class="col-lg-7 col-sm-12 container-info" >
+        <div class="container-img">
+          <img src="" alt="" srcset="">
+        </div>
+        <div class="container-stepper">
+          <p class="title-resp">Antes de comenzar verifica:</p>
+          <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+            <mat-step >
+                <ng-template matStepLabel>Automovil en buen estado</ng-template>
+                <div>
+                  <button class="btn-basic-solid btn-next" mat-button matStepperNext>Acepto</button>
+                </div>
+            </mat-step>
+            <mat-step >
+                <ng-template matStepLabel>Medidas de seguridad</ng-template>
+
+                <div>
+                  <button  class="btn-basic-solid btn-next" mat-button matStepperNext>Acepto</button>
+                </div>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>No estoy bajo efectos del alcohol</ng-template>
+              <div>
+                <button (click)="aproved = true"   class="btn-basic-solid btn-next" mat-button >Acepto</button>
+              </div>
+            </mat-step>
+          </mat-stepper>
+        </div>
+
+        <div>
+            <div class="container-btn">
+              <button [disabled]="!aproved"  class=" btn-continue" mat-button (click)="next()">Empezar a repartir</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-5 col-sm-12  mt-3 mb-3" >
+      <div class="shadow p-2 pt-3 container-graph" style="border-radius: 12px;">
+        <p style="font-size: 36px;" class="mb-5">Tu resumen</p>
+        <div class="mt-3 d-flex" style="justify-content: space-between;">
+          <p>Pedidos de la semana </p>
+          <p>10</p>
+        </div>
+        <div class="mt-3 d-flex" style="justify-content: space-between;">
+          <p>Pedidos del mes </p>
+          <p>10</p>
+        </div>
+        <div class="mt-3 d-flex" style="justify-content: space-between;">
+          <p>Pedidos totales  completados </p>
+          <p>50</p>
+        </div>
+
+
+        <div class="mt-5">
+
+          <div style="display: block">
+            <canvas baseChart
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [legend]="barChartLegend"
+                    chartType="bar">
+            </canvas>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

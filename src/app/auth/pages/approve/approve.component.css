@@ -1,0 +1,50 @@
+.textN {
+    color: #DB6D0B;
+    font-weight: bold;
+    text-align: initial;
+}
+
+h2 {
+    padding: 0!important;
+    text-align: initial;
+}
+
+@media only screen and (max-width: 400px) {
+    img {
+        width: inherit;
+    }
+    .verificar-div {
+      padding: 0px;
+        text-align: center!important;
+    }
+    .div-text div {
+        margin-right: 0!important;
+    }
+    .verificar {
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+      padding: 0px;
+        width: 95%;
+    }
+}
+
+.verificar {
+    color: #DB6D0B;
+    background-color: transparent;
+    border: 1px solid #DB6D0B;
+    padding: 1rem 3rem;
+    margin-left: 15px;
+    border-radius: 4px;
+    font-size: large;
+    margin-right: 5%;
+}
+
+.verificar:hover {
+    background-color: #DB6D0B;
+    color: white;
+}
+
+.div-text {
+    margin-top: auto;
+    margin-bottom: auto;
+}

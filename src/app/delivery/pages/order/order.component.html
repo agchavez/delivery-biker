@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 d-flex" style="justify-content: space-between;">
+      <p class="title">Pedidos pendientes de entrega</p>
+      <div class="container-location" (click)="open()">
+        <fa-icon [icon] ="['fas', 'map-marked-alt']"></fa-icon>
+        <p class="ms-3 location">  Tegucigalpa</p>
+      </div>
+    </div>
+    <div class="col-12 d-flex container-title-table">
+      <p></p>
+      <p class="ms-5">Productos <fa-icon  class="mt" [icon] ="['fas', 'angle-down']"></fa-icon></p>
+      <p>Entrega <fa-icon  class="mt" [icon] ="['fas', 'angle-down']"></fa-icon></p>
+      <p>Empresa <fa-icon  class="mt" [icon] ="['fas', 'angle-down']"></fa-icon></p>
+      <p></p>
+    </div>
+    <div class="col-12 container-orders shadow"  *ngFor="let order of orders" (click)="onSelect(order._id)">
+      <div class="order">
+        <img [src]="order.orderDetails[0].product.company.imgUrl" class="img">
+        <p class="mt">{{order.orderDetails.length}} Productos </p>
+        <p class="mt">Col. Kennedy</p>
+        <p class="mt"><b>{{order.orderDetails[0].product.company.name}}</b></p>
+        <fa-icon  class="mt" [icon] ="['fas', 'chevron-right']"></fa-icon>
+      </div>
+      <!-- <i class="fas fa-chevron-right"><//i> -->
+    </div>
+  </div>
+  <app-select-location #myModal></app-select-location>
+</div>
